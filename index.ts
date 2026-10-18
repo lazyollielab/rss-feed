@@ -39,7 +39,7 @@ const server = new McpServer({ name: "rss-aggregator", version: "1.0.0" });
 server.tool(
   "list_feeds",
   "Lister les flux RSS configurés",
-  z.object({}),
+  z.object({}).shape,
   async () => ({
     content: [{ type: "text", text: JSON.stringify(FEEDS, null, 2) }],
   })
